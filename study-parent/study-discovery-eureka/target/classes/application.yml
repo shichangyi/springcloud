@@ -1,0 +1,22 @@
+#基本属性
+port1: 7777
+host1: discovery1
+
+port2: 8888
+host2: discovery2
+
+
+
+server:
+  port: ${port1}
+spring:
+  application:
+    name: eureka-server
+ 
+eureka:
+  instance:
+    hostname: ${host1}
+    instance-id: ${spring.application.name}_${port1}
+  client: 
+    serviceUrl:
+      defaultZone: http://${host1}:${port1}/eureka

@@ -1,0 +1,18 @@
+server: 
+  port: 18081
+spring:
+  application:
+    name: study-provider-user    # 项目名称尽量用小写
+      
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://discovery1:7777/eureka/    # 指定注册中心的地址
+  instance:
+    preferIpAddress: true
+    instance-id: ${spring.application.name}_${server.port}
+
+
+
+
+ 
